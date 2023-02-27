@@ -10,9 +10,9 @@ const Navbar = () => {
         style={{ width: "10%", objectFit: "cover" }}
       />
       <ul className={styles.containerlist}>
-        <li>Todas las categorias</li>
-        <li>Mates</li>
-        <li>Macetas</li>
+        <li>Hace tu Pedido</li>
+        <li>Nuestros Productos</li>
+        <li>Encontra tu Local</li>
       </ul>
       <CartWidget />
     </div>
