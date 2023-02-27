@@ -7,7 +7,7 @@ const Navbar = () => {
       <img
         src="https://res.cloudinary.com/duvftojdz/image/upload/v1677457479/gbli4ycma0wyexru0ubu.png"
         alt=""
-        style={{width:"10%", objectFit:"cover"}}
+        style={{ width: "10%", objectFit: "cover" }}
       />
       <ul className={styles.containerlist}>
         <li>Todas las categorias</li>
