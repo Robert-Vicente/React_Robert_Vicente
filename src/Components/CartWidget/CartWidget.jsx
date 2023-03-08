@@ -1,11 +1,23 @@
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import "./CartWidget.css";
 
-const CartWidget = () => {
+import { Link } from "react-router-dom";
+
+const CartWidget = ({ numero }) => {
   return (
-    <div>
-     
-      <AiOutlineShoppingCart color="black" size={50}/>
-    </div>
+    <Link to="/cart">
+      <div className="container-cart">
+        <BsFillCartCheckFill
+          style={{
+            fontSize: "2rem",
+            color: "#000000",
+          }}
+        />
+        <div className="bubble-counter">
+          <span>0</span>
+        </div>
+      </div>
+    </Link>
   );
 };
 

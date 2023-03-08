@@ -1,9 +1,10 @@
-
-
-const Footer = () => {
+const Footer = ({ children }) => {
   return (
-    <div></div>
-  )
-}
+    <div>
+      {children}
+      <h1>Footer</h1>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
