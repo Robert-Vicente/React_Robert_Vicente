@@ -15,9 +15,12 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <div>
+    <div >
       <h1>{productSelected.title}</h1>
-      <img src={productSelected.img} alt="" />
+      <img src={productSelected.img} alt="" style={{ width: "300px",
+                height: "300px",
+                border: "2px solid black",
+                textAlign: "center" }}/>
       <ItemCount stock={productSelected.stock} onAdd={onAdd} />
     </div>
   );

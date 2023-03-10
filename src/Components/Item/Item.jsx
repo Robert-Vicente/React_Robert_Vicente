@@ -14,17 +14,17 @@ const Item = ({ element }) => {
   return (
     <Card
       sx={{
-        width: 345,
+        width: 350,
         height: 350,
-        backgroundColor: "black",
+        backgroundColor: "#46b462",
         color: "white",
-        border: "1px solid black",
-        borderRadius: "10px",
-        boxShadow: "0px 0px 10px black",
+        border: "2px solid red",
+        borderRadius: "15px",
+        boxShadow: "0px 0px 10px red",
       }}
     >
       <CardMedia
-        sx={{ height: 160, backgroundColor: "whitesmoke" }}
+        sx={{ height: 150, backgroundColor: "whitesmoke" }}
         image={element.img}
         title="green iguana"
       />
@@ -36,8 +36,8 @@ const Item = ({ element }) => {
         <Typography variant="body">${element.price}.-</Typography>
       </CardContent>
       <CardActions>
-        <Link to={`/itemDetail/${element.id}`}>
-          <Button size="small" variant="contained" color="primary">
+        <Link style={{textDecoration: "none" }} to={`/itemDetail/${element.id}`}>
+          <Button size="small" variant="contained" color="success">
             Ver detalle
           </Button>
         </Link>

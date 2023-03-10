@@ -13,6 +13,7 @@ const ItemList = ({ items }) => {
         flexWrap: "wrap",
         gap: "20px",
         padding: "20px 0",
+        
       }}
     >
       {items.map((element) => {

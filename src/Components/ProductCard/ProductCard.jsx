@@ -21,10 +21,3 @@ const ProductCard = ({ title, price = 0, isRed, login }) => {
 };
 
 export default ProductCard;
-
-// let persona = {
-//     nombre: "pepito",
-//     edad: 30
-// }
-
-// let { edad, nombre } = persona
