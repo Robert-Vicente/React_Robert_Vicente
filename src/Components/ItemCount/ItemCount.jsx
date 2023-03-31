@@ -1,8 +1,8 @@
+import { Button } from "@mui/material";
 import { useState } from "react";
-import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
+import "./ItemCount.css"
 
-const ItemCount = ({ stock, initial = 1, onAdd }) => {
+const ItemCount = ({ stock, initial=1, onAdd }) => {
   const [contador, setContador] = useState(initial);
 
   const sumar = () => {
@@ -18,18 +18,20 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
   };
 
   return (
-    <div>
-      <h2>{contador}</h2>
-
-      <ButtonGroup
-        variant="contained"
-        aria-label="outlined primary button group"
-      >
-        <Button onClick={sumar}>sumar</Button>
-        <Button onClick={restar}>restar</Button>
-        <Button Click={() => onAdd(contador)}>Agregar al carrito </Button>
-      </ButtonGroup>
+    <div className="container-btn">
+    <h2>Cantidad: {contador}</h2>
+    <div className="btns">
+      <Button variant="outlined" onClick={sumar}>
+        +
+      </Button>
+      <Button variant="contained" onClick={() => onAdd(contador)}>
+        agregar al carrito
+      </Button>
+      <Button variant="outlined" onClick={restar}>
+        -
+      </Button>
     </div>
+  </div>
   );
 };
 

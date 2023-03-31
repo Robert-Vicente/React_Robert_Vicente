@@ -1,41 +1,75 @@
 import styles from "./Navbar.module.css";
+
 import CartWidget from "../CartWidget/CartWidget";
+
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
+// import { useEffect, useState } from "react";
+
+// import { collection, getDocs } from "firebase/firestore";
+// import { db } from "../../firebaseConfig";
 
 const Navbar = ({ children }) => {
-  let numero = 12;
+  // const [categoryList, setCategoryList] = useState([]);
+  // const [cate, setCate] = useState([]);
+
+  // useEffect(() => {
+  //   const itemsCollection = collection(db, "categories");
+  //   getDocs(itemsCollection).then((res) => {
+  //     let arrayCategories = res.docs.map((category) => {
+  //       return {
+  //         ...category.data(),
+  //         id: category.id,
+  //       };
+  //     });
+  //     setCategoryList(arrayCategories);
+  //     // ESTO ES NUEVO
+  //     const firstCat = categoryList.length > 0 && categoryList.find(e => e.title === "Todas")
+  //     const otherCat = categoryList.length > 0 &&  categoryList.filter(e => e.title !== "Todas")
+  //     if(categoryList.length > 0){
+  //       setCate([firstCat, ...otherCat])
+  //     }
+  //   });
+
+  // }, [categoryList]);
+  const cate = [
+    {
+      title: "TODAS",
+      path: "/",
+      id: 1,
+    },
+    {
+      title: "COPETIN",
+      path: "/category/copetin",
+      id: 2,
+    },
+    {
+      title: "SANDWICH",
+      path: "/category/sandwich",
+      id: 3,
+    },
+  ];
+
   return (
     <div>
       <div className={styles.containerNavbar}>
         <Link to="/" style={{ color: "#e1d4c7", textDecoration: "none" }}>
-          <img
-            src="https://res.cloudinary.com/duvftojdz/image/upload/v1678287045/Sin_t%C3%ADtulo_jmk3au.png"
-            width="100%"
-            height="100"
-            align="right"
-            alt=""
-          />
+          Tienda Zapas
         </Link>
 
-        <ul className={styles.containerList} >
-          <Link style={{textDecoration: "none" }} to="/" className={styles.navbarItem}>
-            <Button variant="contained" color="success">
-              Todos los Productos
-            </Button>
-          </Link>
-          <Link style={{textDecoration: "none" }} to="/category/sandwich" className={styles.navbarItem}>
-            <Button variant="contained" color="success">
-              sandwich
-            </Button>
-          </Link>
-          <Link style={{textDecoration: "none" }} to="/category/copetin" className={styles.navbarItem}>
-            <Button variant="contained" color="success">
-              Copetin
-            </Button>
-          </Link>
+        <ul className={styles.containerList}>
+          {cate?.map((category) => {
+            return (
+              <Link
+                key={category.id}
+                to={category.path}
+                className={styles.navbarItem}
+              >
+                {category.title}
+              </Link>
+            );
+          })}
         </ul>
-        <CartWidget numero={numero} />
+        <CartWidget />
       </div>
       {children}
     </div>

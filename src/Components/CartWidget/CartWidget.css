@@ -1,15 +1,15 @@
-.container-cart {
+.container-cart{
   width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  color: #000000;
+  color: #e1d4c7;
 }
-.bubble-counter {
+.bubble-counter{
   width: 30px;
   height: 30px;
-  border: 2px solid #000000;
+  border: 2px solid #e1d4c7;
   border-radius: 50%;
   position: absolute;
   top: -50%;

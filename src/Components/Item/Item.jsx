@@ -1,6 +1,5 @@
 import React from "react";
 
-import styles from "./Item.module.css";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -14,17 +13,17 @@ const Item = ({ element }) => {
   return (
     <Card
       sx={{
-        width: 350,
+        width: 345,
         height: 350,
-        backgroundColor: "#46b462",
+        backgroundColor: "black",
         color: "white",
-        border: "2px solid red",
-        borderRadius: "15px",
-        boxShadow: "0px 0px 10px red",
+        border: "1px solid black",
+        borderRadius: "10px",
+        boxShadow: "0px 0px 10px black",
       }}
     >
       <CardMedia
-        sx={{ height: 150, backgroundColor: "whitesmoke" }}
+        sx={{ height: 160, backgroundColor: "whitesmoke" }}
         image={element.img}
         title="green iguana"
       />
@@ -36,8 +35,8 @@ const Item = ({ element }) => {
         <Typography variant="body">${element.price}.-</Typography>
       </CardContent>
       <CardActions>
-        <Link style={{textDecoration: "none" }} to={`/itemDetail/${element.id}`}>
-          <Button size="small" variant="contained" color="success">
+        <Link to={`/itemDetail/${element.id}`}>
+          <Button size="small" variant="contained" color="primary">
             Ver detalle
           </Button>
         </Link>
