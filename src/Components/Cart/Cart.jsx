@@ -14,7 +14,7 @@ const Cart = () => {
 
   const clear = () => {
     Swal.fire({
-      title: "Seguro que quieres vaciar el carrito?",
+      title: "Seguro que desea vaciar el carrito?",
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: "Si, vaciar",
@@ -53,7 +53,7 @@ const Cart = () => {
                     <h2>${item.price}.-</h2>
                     <h2>Unidades: {item.quantity}</h2>
                     <Button
-                      color="secondary"
+                      color="success"
                       variant="contained"
                       onClick={() => deleteProductById(item.id)}
                     >
@@ -71,10 +71,10 @@ const Cart = () => {
 
             {cart.length > 0 && (
               <div className="btn-cart">
-                <Button variant="contained" onClick={() => setShowForm(true)}>
+                <Button variant="contained"  color="success" onClick={() => setShowForm(true)}>
                   Terminar la compra
                 </Button>
-                <Button onClick={clear} variant="contained">
+                <Button onClick={clear}  color="success" variant="contained">
                   Vaciar carrito
                 </Button>
               </div>

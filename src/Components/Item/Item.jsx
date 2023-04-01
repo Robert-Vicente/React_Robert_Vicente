@@ -15,11 +15,11 @@ const Item = ({ element }) => {
       sx={{
         width: 345,
         height: 350,
-        backgroundColor: "black",
+        backgroundColor: "green",
         color: "white",
-        border: "1px solid black",
+        border: "1px solid green",
         borderRadius: "10px",
-        boxShadow: "0px 0px 10px black",
+        boxShadow: "0px 0px 10px green",
       }}
     >
       <CardMedia
@@ -36,7 +36,7 @@ const Item = ({ element }) => {
       </CardContent>
       <CardActions>
         <Link to={`/itemDetail/${element.id}`}>
-          <Button size="small" variant="contained" color="primary">
+          <Button size="small" variant="contained" color="success" text-decoration= "none">
             Ver detalle
           </Button>
         </Link>
