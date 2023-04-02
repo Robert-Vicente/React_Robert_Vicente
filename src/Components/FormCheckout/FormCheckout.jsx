@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import "./FormCheckout.css";
 
 const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
   const [userData, setUserData] = useState({
@@ -29,33 +30,52 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
     cart.map((product) => {
       let refDoc = doc(db, "products", product.id);
       updateDoc(refDoc, { stock: product.stock - product.quantity });
-      return product
+      return product;
     });
   };
 
   return (
-    <div>
+    <div class="login-box">
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Nombre"
-          value={userData.name}
-          onChange={(e) => setUserData({ ...userData, name: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          value={userData.email}
-          onChange={(e) => setUserData({ ...userData, email: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Telefono"
-          value={userData.phone}
-          onChange={(e) => setUserData({ ...userData, phone: e.target.value })}
-        />
+        <div class="user-box">
+          <input
+            type="text"
+            name=""
+            placeholder="Nombre"
+            value={userData.name}
+            onChange={(e) => setUserData({ ...userData, name: e.target.value })}
+          />
+        </div>
 
-        <button type="submit">Comprar</button>
+        <div class="user-box">
+          <input
+            type="text"
+            placeholder="Email"
+            value={userData.email}
+            onChange={(e) =>
+              setUserData({ ...userData, email: e.target.value })
+            }
+          />
+        </div>
+
+        <div class="user-box">
+          <input
+            type="text"
+            placeholder="Telefono"
+            value={userData.phone}
+            onChange={(e) =>
+              setUserData({ ...userData, phone: e.target.value })
+            }
+          />
+          
+          <button type="submit">
+            Comprar
+          </button>
+         
+        </div>
+
+       
       </form>
     </div>
   );

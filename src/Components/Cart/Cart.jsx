@@ -31,10 +31,9 @@ const Cart = () => {
 
   if (orderId) {
     return (
-      <div>
-        <h2>Gracias por su compra</h2>
-        <h4>el comprobante es : {orderId}</h4>
-        <Link to="/">Seguir comprando</Link>
+      <div class="container">
+      <h1 class="neon">Gracias por su Compra <br> Su numero de comprobante es : {orderId} </br></h1>
+      <Link to="/">Seguir comprando</Link>
       </div>
     );
   }
@@ -71,10 +70,14 @@ const Cart = () => {
 
             {cart.length > 0 && (
               <div className="btn-cart">
-                <Button variant="contained"  color="success" onClick={() => setShowForm(true)}>
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={() => setShowForm(true)}
+                >
                   Terminar la compra
                 </Button>
-                <Button onClick={clear}  color="success" variant="contained">
+                <Button onClick={clear} color="success" variant="contained">
                   Vaciar carrito
                 </Button>
               </div>
