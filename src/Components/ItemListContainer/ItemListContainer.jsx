@@ -41,8 +41,7 @@ const ItemListContainer = () => {
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
         <PulseLoader
-          color={"#7F669D"}
-          // loading={loading}
+          color={"#18b82d"}
           size={50}
           aria-label="Loading Spinner"
           data-testid="loader"
@@ -53,16 +52,7 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      {/* {
-        items.length > 0 && <ItemList items={items} />
-      } */}
-
       <ItemList items={items} />
-      {/* <h1 style={{ color: items.length > 0 ? "red" : "blue" }}>
-        Cambio de color
-      </h1> */}
-
-      {/* <input type={ showPassword ? "text" : "password"} /> */}
     </div>
   );
 };

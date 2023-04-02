@@ -14,10 +14,6 @@ const Form = () => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
-  // name ---> min 5 caracteres
-  // email ---> contenga un @
-  // password ---> que no tenga espacios en blanco ( "123") y mayor a 4
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -40,7 +36,6 @@ const Form = () => {
     const passwordIsValid = userData.password === str;
 
     if (!passwordIsValid || userData.password.length < 5) {
-     
       setError(true);
       setErrorMessage(
         "la contraseña no debe tener espacios en blanco y debe tener como minimo 5 caracteres"
@@ -48,10 +43,7 @@ const Form = () => {
       return;
     }
 
-    // INSTRUCCION
     console.log(userData);
-    // axios.post("elendpoint", userData)
-    // axios.patch("elendpoint", { email: userData.email })
   };
 
   return (

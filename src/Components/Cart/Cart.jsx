@@ -31,10 +31,15 @@ const Cart = () => {
 
   if (orderId) {
     return (
-      <div class="container">
-      <h1 class="neon">Gracias por su Compra <br> Su numero de comprobante es : {orderId} </br></h1>
-      <Link to="/">Seguir comprando</Link>
-      </div>
+      <div class="section">
+  <div class="top-border left"></div>
+  <div class="top-border right"></div>
+  <h1>GRACIAS POR SU COMPRA</h1>
+  <p> Su numero de comprobante es : {orderId}.</p>
+    <Link to="/">Seguir comprando</Link>
+
+</div>
+
     );
   }
 
